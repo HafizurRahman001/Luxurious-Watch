@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "img": "https://i.ibb.co/bggVCky/dental.png",
         "title": "DENTAL",
         "desc": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area. The field of dentistry or dental medicine includes teeth as well as other aspects of the craniofacial complex including the temporomandibular joint and other supporting, muscular, lymphatic, nervous, vascular, and anatomical structures. The practitioner is called a dentist. Dentistry is often also understood to subsume the now largely defunct medical specialty of stomatology (the study of the mouth and its disorders and diseases) for which reason the two terms are used interchangeably in certain regions.",
@@ -8,11 +7,10 @@
         "doctorImg": "https://i.ibb.co/Cmz8JJf/doctor-6.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.3
     },
     {
-        "_id": 2,
         "img": "https://i.ibb.co/pZ8nbcC/internam-medicine.jpg",
         "title": "INTERNAL MEDICINE",
         "desc": "Department of Internal Medicine focuses on the diagnosis, treatment, and prevention of non-surgical conditions in adults. The department provides a wide range of high quality cross-specialty health care services, including physical examinations, preventive screenings and immunizations, urgent care for medical conditions, and referrals to surgical specialists when appropriate. Our Internal Medicine Consultants have had broad-based training in General Medicine and in one or more subspecialties. The presence of clinicians with different subspecialty training in the department allows an integrated approach to patient care and helps to limit the volume of referral to other subspecialty departments.",
@@ -20,11 +18,10 @@
         "doctorImg": "https://i.ibb.co/2yW6VdS/doctor-5.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 3.9
     },
     {
-        "_id": 3,
         "img": "https://i.ibb.co/Ypd75vB/gyn.jpg",
         "title": "GYNAECOLOGY",
         "desc": "Gynaecology or gynecology is the medical practice dealing with the health of the female reproductive system. Almost all modern gynaecologists are also obstetricians (see obstetrics and gynaecology). In many areas, the specialities of gynaecology and obstetrics overlap. The term means. Its counterpart is andrology, which deals with medical issues specific to the male reproductive system.",
@@ -32,11 +29,10 @@
         "doctorImg": "https://i.ibb.co/YpFpY13/doctor-4.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 3.6
     },
     {
-        "_id": 4,
         "img": "https://i.ibb.co/RSvxk84/optometry.png",
         "title": "OPTOMETRY/VISION CARE",
         "desc": "Optometry is a specialized health care profession that involves examining the eyes and related structures for defects or abnormalities. This often involves prescribing corrective lenses and providing medical eye care such as in the United States. Modern day Optometry includes extensive training in the diagnosis and treatment of ocular disease (by definition: Ophthalmology) in many developed countries of the world Optometrists (Doctors of Optometry in the United States and Canada, by a higher degree in the United Kingdom are health care professionals who typically provide primary eye care, both optical and medical. They diagnose and manage various vision related abnormalities including refractive error and eye disease.",
@@ -44,11 +40,10 @@
         "doctorImg": "https://i.ibb.co/1T8t74Y/doctor-3.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.7
     },
     {
-        "_id": 5,
         "img": "https://i.ibb.co/X4ZXrMW/physical-therapy.png",
         "title": "PHYSICAL THERAPY",
         "desc": "These licensed health professionals engage in specific graduate training in physical therapy. You may hear them called PTs or physiotherapists. As of 2016, to be eligible to sit for the national exam, you need to graduate from an accredited higher educational institution with a Doctor of Physical Therapy (DPT) degree. An additional state exam must also be passed to earn a license. Physical therapists evaluate your condition and develop a care plan that guides your therapy. They may perform hands-on treatments for your symptoms. They also teach you special exercises to help you move and function better. In most states, you can go directly to a physical therapist without a referral from your doctor. Or your doctor might prescribe it. Check your insurance policy to see if you need a prescription to cover the cost.",
@@ -56,11 +51,10 @@
         "doctorImg": "https://i.ibb.co/CHx1MZk/doctor-2.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.5
     },
     {
-        "_id": 6,
         "img": "https://i.ibb.co/Gx7xGRz/pedtritix.png",
         "title": "PEDIATRICS",
         "desc": "Paediatrics (also spelled pediatrics or pædiatrics) is the branch of medicine that involves the medical care of infants, children, and adolescents. The American Academy of Pediatrics recommends people seek pediatric care through the age of 21. In the United Kingdom, paediatrics covers patients until age 18. Worldwide age limits of pediatrics have been trending up year over year. A medical doctor who specializes in this area is known as a pediatrician, or paediatrician. The word pediatrics and its cognates mean; Pediatricians work in hospitals and children's hospitals particularly those working in its subspecialties (e.g. neonatology), and as outpatient primary care physicians.",
@@ -68,11 +62,10 @@
         "doctorImg": "https://i.ibb.co/St4NCQ4/doctor-1.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.3
     },
     {
-        "_id": 7,
         "img": "https://i.ibb.co/2WGBktX/podiotry.png",
         "title": "PODIATRY",
         "desc": "Podiatry or podiatric medicine is a branch of medicine devoted to the study, diagnosis, and medical and surgical treatment of disorders of the foot, ankle, and lower extremity. The term podiatry came into use in the early 20th century in the United States and is now used worldwide, including in countries such as the United Kingdom, Australia, and Canada. According to the American Association of Colleges of Podiatric Medicine, a Doctor of Podiatric Medicine (DPM) (also known as ain most US states) is a physician who diagnoses and treats conditions affecting the foot, ankle, and structures of the leg. The US podiatric medical school curriculum (equivalent to their US MD and DO counterparts) includes lower extremity anatomy, general human anatomy, physiology, general medicine, physical assessment, biochemistry, neurobiology, pathophysiology, genetics and embryology, microbiology, histology, pharmacology, women's health, physical rehabilitation.",
@@ -80,11 +73,10 @@
         "doctorImg": "https://i.ibb.co/2ZDM1sx/doctor-8.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.2
     },
     {
-        "_id": 8,
         "img": "https://i.ibb.co/d2k1ZPF/behavioral-health.png",
         "title": "BEHAVIORAL HEALTH",
         "desc": "Behavioral health is the scientific study of the emotions, behaviors and biology relating to a person’s mental well-being, their ability to function in every day life and their concept of self. “Behavioral health” is the preferred term to “mental health.” A person struggling with his or her behavioral health may face stress, depression, anxiety, relationship problems, grief, addiction, ADHD or learning disabilities, mood disorders, or other psychological concerns. Counselors, therapists, life coaches, psychologists, nurse practitioners or physicians can help manage behavioral health concerns with treatments such as therapy, counseling, or medication.",
@@ -92,11 +84,10 @@
         "doctorImg": "https://i.ibb.co/JCdrBq1/doctor-7.png",
         "open": "8.00 AM",
         "close": "9.00 PM",
-        "day": "Monday - Friday",
+        "price": "1000",
         "rating": 4.00
     },
     {
-        "_id": 9,
         "img": "https://i.ibb.co/m0ZjsSq/healthy-lifestyle.png",
         "title": "HEALTHY LIFESTYLES",
         "desc": "Think you're leading a healthy lifestyle? Aside from occasionally veering off the path, most of us think we do a fair job of maintaining our health with good (or at least OK) eating habits and physical activity whenever we manage to fit it in. But is that enough to be considered According to a recent study, very few adults actually meet the criteria for a healthy lifestyle. The study, published in the Archives of Internal Medicine, showed that only 3% of American adults got a perfect score on what the authors say are the four basic criteria for healthy living. Just 13.8% met three of the criteria; 34.2% met only two criteria. Women scored slightly better than men.",

@@ -1,0 +1,33 @@
+.order-details {
+  box-shadow: 6px 5px 7px 1px grey;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #dddddd87;
+}
+.order-img img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.left-details-section {
+  border-right: 1px solid #d0c8c8;
+}
+.order-title {
+  border-radius: 5px;
+  padding: 3px 0px;
+  color: white;
+  background-color: rgb(0 0 139 / 62%) !important;
+}
+.cancel-order-btn:hover {
+  background-color: rgba(0, 0, 139, 0.782) !important;
+}
+
+/* media query for mobile device  */
+@media only screen and (max-width: 688px) {
+  .cancel-order-details-btn {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .left-details-section {
+    border-right: 0px solid #ddd;
+  }
+}
