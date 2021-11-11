@@ -1,0 +1,6 @@
+@media only screen and (max-width: 688px) {
+  .signin-with-google {
+    width: 70% !important;
+    margin: 20px auto !important;
+  }
+}

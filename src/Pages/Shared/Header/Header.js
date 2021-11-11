@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import headerLogo from '../../../images/logo/header-logo.png'
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -10,11 +11,15 @@ const Header = () => {
         textDecoration: 'none'
     }
     return (
-        <div className="bg-danger">
+        <div style={{ backgroundColor: '#363A43' }}>
             <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light ">
+                <nav className="navbar navbar-expand-lg navbar-light py-3 ">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="/">Navbar</a>
+                        <div style={{ width: '100px' }} className="navbar-brand" href="/">
+                            <Link to='/'>
+                                <img style={{ width: '100%' }} className="img-fluid" src={headerLogo} alt="" />
+                            </Link>
+                        </div>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -46,7 +51,7 @@ const Header = () => {
                                         </button>)
                                 }
                             </span>
-                            {user?.email && <h5 className="text-white ms-2 pt-2">{user?.displayName}</h5>}
+                            {user?.email && <h5 className="text-white ms-3 pt-2">{user?.displayName}</h5>}
                         </div>
                     </div>
                 </nav>

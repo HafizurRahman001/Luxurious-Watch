@@ -9,7 +9,6 @@ import Purchase from './Components/Purchase/Purchase';
 import DashBoard from './Pages/Dash Board/DashBoard';
 import LogIn from './Pages/Log In/LogIn';
 import Register from './Pages/Register/Register';
-import Header from './Pages/Shared/Header/Header';
 
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Header></Header>
           <Switch>
             <Route path='/home'>
               <Home></Home>

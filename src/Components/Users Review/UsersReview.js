@@ -18,7 +18,7 @@ const UsersReview = () => {
     }
 
     return (
-        <div>
+        <div className='pb-5'>
             <div className='container'>
                 <div className='py-5'>
                     <div>
@@ -34,7 +34,7 @@ const UsersReview = () => {
                                 <img src={review} className="card-img-top img-fluid" alt="..." />
 
                                 <div className="card-body">
-                                    <h5 className="card-title fw-bold">{singleReview?.userName}</h5>
+                                    <h5 className="card-title fw-bold">{singleReview?.userName?.toUpperCase()}</h5>
                                     <p className="fs-6 mt-0 text-muted">{singleReview?.designation}</p>
                                     <p className="card-text text-start">{singleReview?.description}</p>
                                 </div>
@@ -55,8 +55,6 @@ const UsersReview = () => {
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>)}

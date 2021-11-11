@@ -1,0 +1,5 @@
+.accordion-button:not(.collapsed) {
+  color: tomato !important;
+  font-weight: bold !important;
+  background-color: white !important;
+}

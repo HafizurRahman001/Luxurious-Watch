@@ -30,14 +30,14 @@ const useFirebase = () => {
                     displayName: name,
                 }).then(() => {
                 }).catch((error) => {
-
+                    setAuthError(error)
                 });
                 history.replace('/')
             })
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setIsLoading(false));
+        // .finally(() => setIsLoading(false));
     };
 
 
@@ -53,7 +53,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setIsLoading(false));
+        // .finally(() => setIsLoading(false));
     }
 
     // observe user state
@@ -84,9 +84,9 @@ const useFirebase = () => {
                 setAuthError('');
             })
             .catch((error) => {
-                authError(error)
+                setAuthError(error.message)
             })
-            .finally(() => setIsLoading(false));
+        // .finally(() => setIsLoading(false));
     };
 
     const logOut = () => {
@@ -94,9 +94,9 @@ const useFirebase = () => {
         signOut(auth).then(() => {
             setUser({});
         }).catch((error) => {
-            // An error happened.
+            setAuthError(error.message)
         })
-            .finally(() => setIsLoading(false));;
+        // .finally(() => setIsLoading(false));
     };
 
 
@@ -112,7 +112,7 @@ const useFirebase = () => {
             .then(data => {
                 console.log(data);
             })
-        setIsLoading(false)
+        // setIsLoading(false)
     }
 
 
@@ -135,7 +135,6 @@ const useFirebase = () => {
             .then(data => {
                 setProducts(data);
             })
-        setIsLoading(false)
     }, [controlSystem])
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import useAuth from '../../Hooks/useAuth';
 
 const ManageProducts = () => {
-    const { products, setControlSystem } = useAuth();
+    const { products, setControlSystem, isLoading } = useAuth();
     const handleDeleteProduct = id => {
         const proceedDeleteProduct = window.confirm('are you sure to delete product?');
         if (proceedDeleteProduct) {
@@ -16,15 +16,24 @@ const ManageProducts = () => {
                 })
         }
 
-    }
+    };
+
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    };
+
     return (
         <div>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {products?.map(product => <div key={product?._id} className="col">
-                        <div className="card h-100">
+                        <div style={{ boxShadow: '1px 2px 10px #363A43' }} className="card h-100">
                             <img src={product?.img} className="card-img-top img-fluid" alt="..." />
-                            <div className="card-body">
+                            <div style={{ backgroundColor: 'rgb(20 15 42 / 15%)' }} className="card-body">
                                 <h5 className="card-title fw-bold">{product?.title}</h5>
                                 <p className="card-text text-start">{product?.desc?.slice(0, 150)}</p>
                                 <h4>Price: ${product?.price}</h4>

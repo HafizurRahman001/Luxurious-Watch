@@ -24,7 +24,7 @@ const PurchaseInfo = ({ specificProduct }) => {
     };
     return (
         <div className="container additional-info">
-            <h3>Give Your Additional Information</h3>
+            <h3 style={{ color: '#ddd' }} className='py-5'>GIVE YOUR ADDITIONAL INFORMATION</h3>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className="user_info_form w-100">
                     <input defaultValue={user?.displayName} {...register("userName", { required: true })} placeholder="Your Name" />
@@ -32,9 +32,6 @@ const PurchaseInfo = ({ specificProduct }) => {
                     <input {...register("phone", { required: true })} placeholder="Your Phone" />
                     <input {...register("country", { required: true })} placeholder="Your Country Name" />
                     <input {...register("address", { required: true })} placeholder="Your Address" />
-
-                    {/* Rating here */}
-
                     <input className='place_order_btn' type="submit" value='PLACE ORDER' />
                 </form>
             </div>

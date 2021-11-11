@@ -1,14 +1,14 @@
 .additional-info {
   border: 1px solid gray;
-  padding: 50px 15px;
+  padding: 50px 15px 70px 15px;
 }
 .user_info_form input {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 5px 5px;
+  margin-bottom: 15px;
+  padding: 10px 5px;
   border-radius: 5px;
   border: 1px solid gray;
-  box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.796);
+  /* box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.796); */
 }
 .place_order_btn {
   background-image: linear-gradient(to right, crimson, rgb(213, 43, 77));

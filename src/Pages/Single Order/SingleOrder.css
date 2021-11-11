@@ -2,7 +2,8 @@
   box-shadow: 6px 5px 7px 1px grey;
   border-radius: 10px;
   margin-bottom: 15px;
-  background: #dddddd87;
+  /* background: #dddddd87; */
+  background: #1f1f29bf;
 }
 .order-img img {
   border-top-left-radius: 10px;
@@ -15,10 +16,10 @@
   border-radius: 5px;
   padding: 3px 0px;
   color: white;
-  background-color: rgb(0 0 139 / 62%) !important;
+  background-color: #1f1f29c7;
 }
 .cancel-order-btn:hover {
-  background-color: rgba(0, 0, 139, 0.782) !important;
+  background-color: #1f1f29 !important;
 }
 
 /* media query for mobile device  */

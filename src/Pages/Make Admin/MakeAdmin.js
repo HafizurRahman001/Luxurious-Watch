@@ -1,9 +1,11 @@
 import React from 'react';
 import './MakeAdmin.css';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../Hooks/useAuth';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
+    const { isLoading } = useAuth();
 
     const adminEmailInput = {
         padding: '5px 3px',
@@ -27,10 +29,19 @@ const MakeAdmin = () => {
         console.log(data);
         reset();
     };
+
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    };
+
     return (
         <div>
             <div className="mb-5">
-                <h2 className='fw-bold'>WANNA USER'S MAKE AN ADMIN?</h2>
+                <h2 className='fw-bold'>WANNA MAKE AN ADMIN?</h2>
                 <p className="text-muted">Put the user email for conform making admin</p>
             </div>
             <div>

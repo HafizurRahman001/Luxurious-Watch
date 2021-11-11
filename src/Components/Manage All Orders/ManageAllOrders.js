@@ -27,7 +27,16 @@ const ManageAllOrders = () => {
                     alert('Order Successfully Deleted')
                 }
             })
-    }
+    };
+
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    };
+
     return (
         <div className="container">
             <div className='mb-5'>
@@ -57,11 +66,6 @@ const ManageAllOrders = () => {
                     </tr>
                 </tbody>)}
             </table>
-            {isLoading && <div className="text-center my-5">
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>}
         </div>
     );
 };

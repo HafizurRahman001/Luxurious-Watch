@@ -6,7 +6,7 @@ const MyOrder = () => {
     const { user, isLoading } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
     const [control, setControl] = useState(false);
-    console.log(isLoading);
+
     useEffect(() => {
         fetch(`http://localhost:5000/my-order/${user?.email}`)
             .then(res => res.json())
@@ -15,10 +15,18 @@ const MyOrder = () => {
             })
     }, [control, user?.email]);
 
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    };
+
     return (
         <div className="container">
             <div className="mb-5">
-                <h3 className='fw-bold'>YOUR ORDER LIST</h3>
+                <h2 className='fw-bold'>YOUR ORDER LIST</h2>
                 <p className='text-muted'>Order Quantity {myOrders?.length}</p>
             </div>
             {isLoading && <div className="text-center my-5">
@@ -26,7 +34,7 @@ const MyOrder = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             </div>}
-            {!isLoading && <div>
+            <div>
                 <div className="row g-4">
                     {
                         myOrders.map(order => <SingleOrder
@@ -38,7 +46,6 @@ const MyOrder = () => {
                     }
                 </div>
             </div>
-            }
         </div>
     );
 };

@@ -12,14 +12,13 @@ import ManageAllOrders from '../../Components/Manage All Orders/ManageAllOrders'
 import MakeAdmin from '../Make Admin/MakeAdmin';
 import AddNewProduct from '../Add New Product/AddNewProduct';
 import useAuth from '../../Hooks/useAuth';
-import ManageProducts from '../Manage Products/ManageProducts';
 import ManagementProducts from '../../Components/Management Products/ManagementProducts';
 
 const drawerWidth = 240;
 
 const DashBoard = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { logOut, admin } = useAuth();
+    const { logOut, admin, isLoading } = useAuth();
 
 
     let { path, url } = useRouteMatch();
@@ -31,7 +30,15 @@ const DashBoard = () => {
     const activeStyle = {
         color: 'blue',
         fontWeight: 'bold'
-    }
+    };
+
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    };
 
 
 
