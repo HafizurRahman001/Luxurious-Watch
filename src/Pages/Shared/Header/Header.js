@@ -5,6 +5,10 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const { user, logOut } = useAuth();
+    const linkStyle = {
+        color: 'white',
+        textDecoration: 'none'
+    }
     return (
         <div className="bg-danger">
             <div className="container">
@@ -25,28 +29,24 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link to='/all-products'>EXPLORE</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link to='/manage-all-orders'>MANAGE ALL ORDERS</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to='/my-orders'>My Orders</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to='/manage-products'>MANAGE PRODUCTS</Link>
-                                </li>
                                 {user?.email && <li className="nav-item">
                                     <Link to='/dash-board'>DASHBOARD</Link>
                                 </li>}
                             </ul>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                <button className="btn btn-outline-danger text-dark bg-warning" type="submit">Search</button>
                             </form>
                             <span>
                                 {
-                                    !user?.email ? <Link to='/login'>LOGIN</Link> : <span onClick={logOut}>LOGOUT</span>
+                                    !user?.email ? (<button className="btn btn-primary ms-2">
+                                        <Link style={linkStyle} to='/login'>LOGIN</Link>
+                                    </button>) : (
+                                        <button className="btn btn-primary ms-2" onClick={logOut}>LOGOUT
+                                        </button>)
                                 }
                             </span>
+                            {user?.email && <h5 className="text-white ms-2 pt-2">{user?.displayName}</h5>}
                         </div>
                     </div>
                 </nav>

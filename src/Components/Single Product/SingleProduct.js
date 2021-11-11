@@ -9,7 +9,7 @@ const SingleProduct = (props) => {
                 <img src={img} className="card-img-top img-fluid" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{desc?.slice(0, 150)}</p>
+                    <p className="card-text text-start">{desc?.slice(0, 150)}</p>
                     <h4>Price: ${price}</h4>
                 </div>
                 <div className="card-footer">

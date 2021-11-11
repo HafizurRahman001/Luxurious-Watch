@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [controlSystem, setControlSystem] = useState(false);
+    const [admin, setAdmin] = useState(false);
 
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
@@ -57,6 +58,7 @@ const useFirebase = () => {
 
     // observe user state
     useEffect(() => {
+        setIsLoading(true);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -99,6 +101,7 @@ const useFirebase = () => {
 
 
     const saveUser = (email, displayName, method) => {
+        setIsLoading(true);
         const user = { email, displayName };
         fetch('http://localhost:5000/users', {
             method: method,
@@ -113,17 +116,26 @@ const useFirebase = () => {
     }
 
 
-
+    useEffect(() => {
+        setIsLoading(true)
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data?.admin)
+            })
+        setIsLoading(false);
+    }, [user?.email])
 
 
 
     useEffect(() => {
-        setIsLoading(true);
+        setIsLoading(true)
         fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
             })
+        setIsLoading(false)
     }, [controlSystem])
 
 
@@ -138,6 +150,7 @@ const useFirebase = () => {
         authError,
         signInWithGoogle,
         setControlSystem,
+        admin
     };
 };
 

@@ -29,8 +29,12 @@ const ManageAllOrders = () => {
             })
     }
     return (
-        <div>
-            <table className="table table-striped">
+        <div className="container">
+            <div className='mb-5'>
+                <h2 className='fw-bold'>MANAGE ALL ORDERS</h2>
+                <p className='text-muted'>Manage User's Orders</p>
+            </div>
+            <table className="table table-striped table-dark table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -44,7 +48,7 @@ const ManageAllOrders = () => {
                     <tr>
                         <th scope="row">{index + 1}</th>
                         <td>{manageProduct?.userName}</td>
-                        <td>{manageProduct?.title}</td>
+                        <td>{manageProduct?.specificProduct?.title}</td>
                         <td>{manageProduct?.status}</td>
                         <td>
                             <button onClick={() => handleShipped(manageProduct?._id, 'PUT', 'shipped')}>Shipped</button>
