@@ -6,9 +6,12 @@ import useAuth from '../../Hooks/useAuth';
 const PurchaseInfo = ({ specificProduct }) => {
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = data => {
+        const date = new Date();
+        const localDate = date.toLocaleDateString();
         data.status = 'Pending';
-        const infoData = { ...data, specificProduct };
+        const infoData = { ...data, localDate, specificProduct };
         fetch('http://localhost:5000/purchase-info', {
             method: 'POST',
             headers: { "content-type": "application/json" },

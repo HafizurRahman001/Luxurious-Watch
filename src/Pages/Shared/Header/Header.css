@@ -1,7 +1,7 @@
 .nav-menu li a {
   text-decoration: none;
   color: white;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .nav-menu li a:hover {
   color: yellow;

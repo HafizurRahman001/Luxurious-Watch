@@ -13,7 +13,8 @@ const Review = () => {
         setRating(rating);
     }
     const onSubmit = data => {
-        const reviewData = { ...data, rating: rating };
+        const date = new Date();
+        const reviewData = { ...data, date, rating: rating };
         console.log(reviewData);
         fetch('http://localhost:5000/review', {
             method: 'POST',
@@ -37,17 +38,17 @@ const Review = () => {
 
     return (
         <div className="container">
-            <div className='mb-5'>
+            <div className='mb-5' data-aos="fade-left">
                 <h2 className='fw-bold'>SHARE YOUR FEELINGS!</h2>
                 <p className='text-muted'>Your Review is Very Important for Us</p>
             </div>
-            <div className="review_form">
+            <div className="review_form" data-aos="fade-left">
                 <form className="w-50 mx-auto review_form_section" onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("userName", { required: true })} placeholder="Your Name" />
                     <input {...register("designation", { required: true })} placeholder="Your Designation" />
-                    <textarea {...register("description", { required: true })} placeholder="Your Review" />
+                    <textarea {...register("description", { required: true })} placeholder="Your Opinion" />
                     <div>
-                        <h4 className='text-start text-white'>Rate Us</h4>
+                        <h4 style={{ marginBottom: '-3px' }} className='text-start text-white'>Rate Us</h4>
                     </div>
                     <ReactStars onChange={handleRating}
                         activeColor='#ffff00'

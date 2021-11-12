@@ -1,0 +1,27 @@
+.footer-logo img {
+  width: 50%;
+}
+.footer-logo {
+  text-align: left;
+  padding-bottom: 10px;
+}
+.footer-section {
+  background-color: #ded4d394;
+}
+.useful-links-section a {
+  color: black;
+  text-decoration: none;
+}
+.useful-links-section {
+  text-align: left !important;
+}
+.fab-icon {
+  margin: 0px 5px;
+  font-size: 31px;
+}
+.fab-icon:hover {
+  color: crimson;
+}
+.useful-links-section p a:hover {
+  color: crimson;
+}

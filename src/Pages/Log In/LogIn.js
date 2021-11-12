@@ -18,7 +18,6 @@ const LogIn = () => {
         const newLogInData = { ...logInData };
         newLogInData[field] = value;
         setLogInData(newLogInData);
-        console.log(newLogInData);
     };
     const handleLogInSubmit = e => {
         e.preventDefault();

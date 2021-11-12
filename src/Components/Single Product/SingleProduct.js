@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SingleProduct = (props) => {
     const { img, title, desc, price, _id } = props?.product;
     return (
-        <div className="col">
+        <div className="col" data-aos="zoom-in">
             <div style={{ boxShadow: '1px 2px 10px #363A43' }} className="card h-100">
                 <img src={img} className="card-img-top img-fluid" alt="..." />
                 <div className="card-body">

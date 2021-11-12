@@ -13,6 +13,7 @@ import MakeAdmin from '../Make Admin/MakeAdmin';
 import AddNewProduct from '../Add New Product/AddNewProduct';
 import useAuth from '../../Hooks/useAuth';
 import ManagementProducts from '../../Components/Management Products/ManagementProducts';
+import dashBoardLogo from '../../images/dashboard-logo2.jpg';
 
 const drawerWidth = 240;
 
@@ -43,8 +44,12 @@ const DashBoard = () => {
 
 
     const drawer = (
-        <div>
-            <Toolbar></Toolbar>
+        <div data-aos="fade-down">
+            <Toolbar style={{ backgroundColor: '#000000' }}>
+                <div style={{ width: '100%' }}>
+                    <img style={{ width: '100%', height: '64px' }} src={dashBoardLogo} alt="" />
+                </div>
+            </Toolbar>
 
             <Divider />
             <Box>
@@ -118,7 +123,15 @@ const DashBoard = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/'><i className="fas me-2 fa-home"></i>HOME</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>
+                            <i className="fas me-2 fa-home"></i>HOME
+                        </Link>
+                        <Link style={{ textDecoration: 'none', color: 'white', margin: '0px 20px' }} to='/about'>
+                            <i className="fas pe-2 fa-award"></i>ABOUT
+                        </Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/all-products'>
+                            <i className="fab pe-2 fa-buffer"></i>EXPLORE
+                        </Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -162,7 +175,7 @@ const DashBoard = () => {
                 <Box>
                     <Switch>
                         <Route exact path={path}>
-                            <h3>Payment System Coming Soon.</h3>
+                            <h3>PAYMENT SYSTEM COMING SOON.</h3>
                         </Route>
                         <Route path={`${path}/my-order`}>
                             <MyOrder />

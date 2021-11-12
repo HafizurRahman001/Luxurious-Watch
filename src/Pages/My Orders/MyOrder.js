@@ -25,7 +25,7 @@ const MyOrder = () => {
 
     return (
         <div className="container">
-            <div className="mb-5">
+            <div className="mb-5" data-aos="fade-left">
                 <h2 className='fw-bold'>YOUR ORDER LIST</h2>
                 <p className='text-muted'>Order Quantity {myOrders?.length}</p>
             </div>
@@ -35,7 +35,7 @@ const MyOrder = () => {
                 </div>
             </div>}
             <div>
-                <div className="row g-4">
+                <div className="row g-2" >
                     {
                         myOrders.map(order => <SingleOrder
                             order={order}

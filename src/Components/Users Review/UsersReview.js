@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
+import './UserReview.css';
 import reviewLogo from '../../images/logo/review-logo.png'
 import review from '../../images/review.jpg';
 
@@ -29,10 +30,9 @@ const UsersReview = () => {
                 </div>
                 <div>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
-                        {reviews.map(singleReview => <div key={singleReview?._id} className="col">
+                        {reviews.map(singleReview => <div key={singleReview?._id} className="col" data-aos="fade-left">
                             <div style={cardShadow} className="card h-100">
                                 <img src={review} className="card-img-top img-fluid" alt="..." />
-
                                 <div className="card-body">
                                     <h5 className="card-title fw-bold">{singleReview?.userName?.toUpperCase()}</h5>
                                     <p className="fs-6 mt-0 text-muted">{singleReview?.designation}</p>
@@ -48,8 +48,8 @@ const UsersReview = () => {
                                                 <Rating
                                                     initialRating={singleReview?.rating}
                                                     readonly
-                                                    emptySymbol="far fa-star fa-1x"
-                                                    fullSymbol="fas fa-star fa-1x"
+                                                    emptySymbol="far rating fa-star fa-1x"
+                                                    fullSymbol="fas rating fa-star fa-1x"
                                                     fractions={2}
                                                 />
                                             </div>

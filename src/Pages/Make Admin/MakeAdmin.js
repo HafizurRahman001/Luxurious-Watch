@@ -26,7 +26,6 @@ const MakeAdmin = () => {
                     alert('Already is a Admin')
                 };
             })
-        console.log(data);
         reset();
     };
 
@@ -40,12 +39,16 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <div className="mb-5">
+            <div className="mb-5" data-aos="fade-left">
                 <h2 className='fw-bold'>WANNA MAKE AN ADMIN?</h2>
                 <p className="text-muted">Put the user email for conform making admin</p>
             </div>
-            <div>
-                <form className='w-100 mx-auto' onSubmit={handleSubmit(onSubmit)}>
+            <div style={{ backgroundImage: 'linear-gradient(to top, rgb(221 221 221 / 38%), #dddddda3, rgb(221 221 221 / 0%))' }} className='border border-1 pt-4 pb-5'>
+
+                <form className='w-100 mx-auto' onSubmit={handleSubmit(onSubmit)} data-aos="flip-left">
+                    <span style={{ fontSize: '80px' }}>
+                        <i style={{ paddingBottom: '30px' }} className="fas fa-user-cog"></i>
+                    </span> <br />
                     <input style={adminEmailInput} {...register("email")} placeholder='Admin email' />
 
                     <input className='btn btn-danger' type="Submit" />

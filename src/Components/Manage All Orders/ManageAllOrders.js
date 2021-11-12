@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
+import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
     const [manageProducts, setManageProducts] = useState([]);
@@ -39,7 +40,7 @@ const ManageAllOrders = () => {
 
     return (
         <div className="container">
-            <div className='mb-5'>
+            <div className='mb-5' data-aos="fade-left">
                 <h2 className='fw-bold'>MANAGE ALL ORDERS</h2>
                 <p className='text-muted'>Manage User's Orders</p>
             </div>
@@ -53,15 +54,15 @@ const ManageAllOrders = () => {
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                {manageProducts?.map((manageProduct, index) => <tbody key={manageProduct?._id}>
+                {manageProducts?.map((manageProduct, index) => <tbody key={manageProduct?._id} data-aos="zoom-in">
                     <tr>
                         <th scope="row">{index + 1}</th>
                         <td>{manageProduct?.userName}</td>
                         <td>{manageProduct?.specificProduct?.title}</td>
-                        <td>{manageProduct?.status}</td>
+                        <td className={manageProduct?.status === 'Shipped' ? 'status' : 'text-white'}>{manageProduct?.status}</td>
                         <td>
-                            <button onClick={() => handleShipped(manageProduct?._id, 'PUT', 'shipped')}>Shipped</button>
-                            <button onClick={() => handleShipped(manageProduct?._id, 'DELETE', 'delete-product')}>Delete</button>
+                            <button className='btn btn-info px-2 py-1' onClick={() => handleShipped(manageProduct?._id, 'PUT', 'shipped')}>Shipped</button>{' '}
+                            <button className='btn btn-danger px-2 py-1' onClick={() => handleShipped(manageProduct?._id, 'DELETE', 'delete-product')}>Delete</button>
                         </td>
                     </tr>
                 </tbody>)}

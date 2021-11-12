@@ -4,7 +4,7 @@ import ManageProducts from '../../Pages/Manage Products/ManageProducts';
 const ManagementProducts = () => {
     return (
         <div>
-            <div className='mb-5'>
+            <div className='mb-5' data-aos="fade-left">
                 <h2 className='fw-bold'>MANAGEMENT ALL PRODUCTS</h2>
                 <p className='text-muted'>You can manage all products easily!</p>
             </div>

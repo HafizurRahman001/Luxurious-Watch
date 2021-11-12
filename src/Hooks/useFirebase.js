@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import initializeFirebase from '../Firebase/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider, updateProfile, signInWithEmailAndPassword, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 
 initializeFirebase();
 const useFirebase = () => {
+
+    //declaring states
     const [products, setProducts] = useState([]);
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -11,11 +13,12 @@ const useFirebase = () => {
     const [controlSystem, setControlSystem] = useState(false);
     const [admin, setAdmin] = useState(false);
 
+    //firebase provider and auth
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
 
 
-
+    //register new user by google firebase
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -37,10 +40,10 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-        // .finally(() => setIsLoading(false));
     };
 
 
+    //login new user by google firebase
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -53,7 +56,6 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-        // .finally(() => setIsLoading(false));
     }
 
     // observe user state
@@ -71,7 +73,7 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
-
+    //signIn user automatically by google
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -86,9 +88,9 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message)
             })
-        // .finally(() => setIsLoading(false));
     };
 
+    //logOut method for signOut
     const logOut = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
@@ -96,10 +98,9 @@ const useFirebase = () => {
         }).catch((error) => {
             setAuthError(error.message)
         })
-        // .finally(() => setIsLoading(false));
     };
 
-
+    // common method using for store user info in database
     const saveUser = (email, displayName, method) => {
         setIsLoading(true);
         const user = { email, displayName };
@@ -115,7 +116,7 @@ const useFirebase = () => {
         // setIsLoading(false)
     }
 
-
+    // make admin using Email
     useEffect(() => {
         setIsLoading(true)
         fetch(`http://localhost:5000/users/${user?.email}`)
@@ -127,7 +128,7 @@ const useFirebase = () => {
     }, [user?.email])
 
 
-
+    // call all products from database
     useEffect(() => {
         setIsLoading(true)
         fetch('http://localhost:5000/products')
@@ -138,7 +139,7 @@ const useFirebase = () => {
     }, [controlSystem])
 
 
-
+    //export necessary function and states for use later
     return {
         products,
         user,
@@ -149,6 +150,7 @@ const useFirebase = () => {
         authError,
         signInWithGoogle,
         setControlSystem,
+        setProducts,
         admin
     };
 };

@@ -1,17 +1,24 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import headerLogo from '../../../images/logo/header-logo.png'
 
 const Header = () => {
     const { user, logOut } = useAuth();
+
     const linkStyle = {
         color: 'white',
         textDecoration: 'none'
+    };
+
+    const activeStyle = {
+        fontWeight: 'bold',
+        borderBottom: '2px solid yellow',
+        color: 'yellow'
     }
     return (
-        <div style={{ backgroundColor: '#363A43' }}>
+        <div style={{ backgroundColor: 'rgb(37 75 162)' }}>
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light py-3 ">
                     <div className="container-fluid">
@@ -26,16 +33,16 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav nav-menu me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to='/home'>HOME</Link>
+                                    <NavLink activeStyle={activeStyle} to='/home'><i className="fas pe-2 fa-home"></i>HOME</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/about'>ABOUT</Link>
+                                    <NavLink activeStyle={activeStyle} to='/about'><i className="fas pe-2 fa-award"></i>ABOUT</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/all-products'>EXPLORE</Link>
+                                    <NavLink activeStyle={activeStyle} to='/all-products'><i className="fab pe-2 fa-buffer"></i>EXPLORE</NavLink>
                                 </li>
                                 {user?.email && <li className="nav-item">
-                                    <Link to='/dash-board'>DASHBOARD</Link>
+                                    <NavLink activeStyle={activeStyle} to='/dash-board'><i className="fab pe-2 fa-gg"></i>DASHBOARD</NavLink>
                                 </li>}
                             </ul>
                             <form className="d-flex">
@@ -47,7 +54,7 @@ const Header = () => {
                                     !user?.email ? (<button className="btn btn-primary ms-2">
                                         <Link style={linkStyle} to='/login'>LOGIN</Link>
                                     </button>) : (
-                                        <button className="btn btn-primary ms-2" onClick={logOut}>LOGOUT
+                                        <button className="btn btn-info ms-2" onClick={logOut}>LOGOUT
                                         </button>)
                                 }
                             </span>

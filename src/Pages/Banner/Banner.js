@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import banner1 from '../../images/Banner-Images/banner1.png'
 import banner2 from '../../images/Banner-Images/banner2.png'
 import banner3 from '../../images/Banner-Images/banner3.jpg'
@@ -14,19 +15,23 @@ const Banner = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
+                        <img src={banner1} className="d-block w-100" alt="..." />
+                        <div style={{ background: 'rgb(49 48 48 / 42%)' }} className="carousel-caption d-none d-md-block" data-aos="fade-left">
+                            <h2 style={{ textShadow: '1px 2px 3px black', color: 'yellow', fontWeight: 'bold' }}>WELCOME TO LUXURIOUS WATCH STORE</h2>
+                            <p style={{ textShadow: '1px 2px 3px black', color: 'aqua', fontSize: '20px' }}>We are offering you various gent's fashionable watch</p>
+                            <button style={{ backgroundColor: 'crimson' }} className="btn mb-3" >
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to='/all-products'>Explore More</Link>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="carousel-item">
                         <img src={banner3} className="d-block w-100" alt="..." />
                         <div style={{ background: 'rgb(49 48 48 / 42%)' }} className="carousel-caption d-none d-md-block">
                             <h2 style={{ textShadow: '1px 2px 3px black', color: 'yellow', fontWeight: 'bold' }}>WELCOME TO LUXURIOUS WATCH STORE</h2>
                             <p style={{ textShadow: '1px 2px 3px black', color: 'aqua', fontSize: '20px' }}>We are offering you various gent's fashionable watch</p>
-                            <button style={{ backgroundColor: 'crimson', color: 'white' }} className="btn mb-3" > Explore More</button>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={banner1} className="d-block w-100" alt="..." />
-                        <div style={{ background: 'rgb(49 48 48 / 42%)' }} className="carousel-caption d-none d-md-block">
-                            <h2 style={{ textShadow: '1px 2px 3px black', color: 'yellow', fontWeight: 'bold' }}>WELCOME TO LUXURIOUS WATCH STORE</h2>
-                            <p style={{ textShadow: '1px 2px 3px black', color: 'aqua', fontSize: '20px' }}>We are offering you various gent's fashionable watch</p>
-                            <button style={{ backgroundColor: 'crimson', color: 'white' }} className="btn mb-3" > Explore More</button>
+                            <button style={{ backgroundColor: 'crimson' }} className="btn mb-3" >
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to='/all-products'>Explore More</Link>
+                            </button>
                         </div>
                     </div>
                     <div className="carousel-item">
@@ -34,7 +39,9 @@ const Banner = () => {
                         <div style={{ background: 'rgb(49 48 48 / 42%)' }} className="carousel-caption d-none d-md-block">
                             <h2 style={{ textShadow: '1px 2px 3px black', color: 'yellow', fontWeight: 'bold' }}>WELCOME TO LUXURIOUS WATCH STORE</h2>
                             <p style={{ textShadow: '1px 2px 3px black', color: 'aqua', fontSize: '20px' }}>We are offering you various gent's fashionable watch</p>
-                            <button style={{ backgroundColor: 'crimson', color: 'white' }} className="btn mb-3" > Explore More</button>
+                            <button style={{ backgroundColor: 'crimson' }} className="btn mb-3" >
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to='/all-products'>Explore More</Link>
+                            </button>
                         </div>
                     </div>
                 </div >

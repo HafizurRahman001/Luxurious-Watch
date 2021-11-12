@@ -3,7 +3,7 @@
   border-radius: 10px;
   margin-bottom: 15px;
   /* background: #dddddd87; */
-  background: #1f1f29bf;
+  background: #1f1f29de;
 }
 .order-img img {
   border-top-left-radius: 10px;
@@ -20,6 +20,12 @@
 }
 .cancel-order-btn:hover {
   background-color: #1f1f29 !important;
+}
+.product-highlights p {
+  margin-bottom: 1px;
+}
+.product-highlights-icon {
+  color: rgb(221 221 221 / 74%);
 }
 
 /* media query for mobile device  */
