@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
 .accordion-button:not(.collapsed) {
   color: tomato !important;
   font-weight: bold !important;
   background-color: white !important;
+}
+
+.product-description {
+  font-family: "Slabo 27px", serif !important;
+  font-size: 19px;
+  font-weight: 500;
 }

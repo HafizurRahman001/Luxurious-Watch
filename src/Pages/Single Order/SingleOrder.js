@@ -58,7 +58,7 @@ const SingleOrder = (props) => {
                                 <div style={{ color: 'rgb(221 221 221 / 74%)' }} className="col-md-7 col-7 ps-5 product-highlights">
                                     <p>{props?.order?.localDate}</p>
                                     <p>{props?.order?.specificProduct?.price}</p>
-                                    <p>{props?.order?.specificProduct?.close}</p>
+                                    <p>{props?.order?.specificProduct?.productBrand}</p>
                                     <p className={props?.order?.status === 'Shipped' && 'status'}>{props?.order?.status}</p>
                                 </div>
                             </div>

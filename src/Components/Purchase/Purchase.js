@@ -7,6 +7,7 @@ import PurchaseInfo from '../Purchase Info/PurchaseInfo';
 const Purchase = () => {
     const { productId } = useParams();
     const [specificProduct, setSpecificProduct] = useState({});
+    console.log(specificProduct);
 
     useEffect(() => {
         fetch(`http://localhost:5000/purchase/${productId}`)
@@ -41,9 +42,9 @@ const Purchase = () => {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body text-muted">
-                                                        <p style={{ textAlign: 'justify' }} className="card-text">{specificProduct?.desc?.slice(0, 300)}</p>
-                                                        <h4>Price: ${specificProduct?.price}</h4>
+                                                    <div className="accordion-body">
+                                                        <p style={{ textAlign: 'justify' }} className="card-text product-description">{specificProduct?.desc?.slice(0, 300)}</p>
+                                                        <h5 className='text-start text-muted'>Price: ${specificProduct?.price}</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,7 +56,26 @@ const Purchase = () => {
                                                 </h2>
                                                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                     <div className="accordion-body">
-                                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                        <div className="row">
+                                                            <div className="col-md-4 col-4 text-start">
+                                                                <h6>Product Brand</h6>
+                                                                <h6>Strap Material</h6>
+                                                                <h6>Box Content</h6>
+                                                                <h6>SKU Code</h6>
+                                                            </div>
+                                                            <div className="col-md-2 col-2">
+                                                                <h6><i className="fas fa-long-arrow-alt-right"></i></h6>
+                                                                <h6><i className="fas fa-long-arrow-alt-right"></i></h6>
+                                                                <h6><i className="fas fa-long-arrow-alt-right"></i></h6>
+                                                                <h6><i className="fas fa-long-arrow-alt-right"></i></h6>
+                                                            </div>
+                                                            <div className="col-md-6 col-6 text-start">
+                                                                <h6>{specificProduct?.productBrand}</h6>
+                                                                <h6>{specificProduct?.productMaterial}</h6>
+                                                                <h6>{specificProduct?.boxContent}</h6>
+                                                                <h6>{specificProduct?._id}</h6>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,19 +89,19 @@ const Purchase = () => {
                                                     <div className="accordion-body text-start">
                                                         <ol style={{ listStyle: "none" }}>
                                                             <li>
-                                                                <p><i className="fab pe-2 fa-angellist"></i>100% Authentic</p>
+                                                                <h6><i className="fab pe-3 fa-angellist"></i>100% Authentic</h6>
                                                             </li>
                                                             <li>
-                                                                <i className="fas pe-2 fa-exchange-alt"></i>14 Days Easy Return
+                                                                <h6><i className="fas pe-3 fa-exchange-alt"></i>14 Days Easy Return</h6>
 
                                                                 <ol style={{ listStyle: "none" }}>
                                                                     <li className='text-muted'>
-                                                                        <p><i className="fas pe-2 fa-times"></i>Change of mind is not applicable</p>
+                                                                        <h6><i className="fas pe-3 fa-times"></i>Change of mind is not applicable</h6>
                                                                     </li>
                                                                 </ol>
                                                             </li>
                                                             <li>
-                                                                <p><i className="fas pe-2 fa-sun"></i>One Year Seller Warrenty</p>
+                                                                <h6><i className="fas pe-3 fa-sun"></i>One Year Seller Warrenty</h6>
                                                             </li>
                                                         </ol>
                                                     </div>
