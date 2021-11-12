@@ -12,7 +12,7 @@ const PurchaseInfo = ({ specificProduct }) => {
         const localDate = date.toLocaleDateString();
         data.status = 'Pending';
         const infoData = { ...data, localDate, specificProduct };
-        fetch('http://localhost:5000/purchase-info', {
+        fetch('https://immense-mesa-31667.herokuapp.com/purchase-info', {
             method: 'POST',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(infoData)

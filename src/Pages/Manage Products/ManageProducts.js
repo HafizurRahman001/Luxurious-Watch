@@ -4,18 +4,20 @@ import useAuth from '../../Hooks/useAuth';
 const ManageProducts = () => {
     const { products, setProducts, isLoading } = useAuth();
 
+    // load all products from database
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-mesa-31667.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
             })
     }, [products])
 
+    //handle delete method
     const handleDeleteProduct = id => {
         const proceedDeleteProduct = window.confirm('are you sure to delete product?');
         if (proceedDeleteProduct) {
-            fetch(`http://localhost:5000/manage-product/${id}`, {
+            fetch(`https://immense-mesa-31667.herokuapp.com/manage-product/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -26,6 +28,7 @@ const ManageProducts = () => {
 
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

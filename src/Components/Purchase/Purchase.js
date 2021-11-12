@@ -3,23 +3,30 @@ import { useParams } from 'react-router';
 import './Purchase.css';
 import Header from '../../Pages/Shared/Header/Header';
 import PurchaseInfo from '../Purchase Info/PurchaseInfo';
+import Footer from '../../Pages/Shared/Footer/Footer';
 
 const Purchase = () => {
+
     const { productId } = useParams();
     const [specificProduct, setSpecificProduct] = useState({});
     console.log(specificProduct);
 
+    // load specific data using user's email
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase/${productId}`)
+        fetch(`https://immense-mesa-31667.herokuapp.com/purchase/${productId}`)
             .then(res => res.json())
             .then(data => {
                 setSpecificProduct(data);
             })
-    }, [])
+    }, []);
+
     return (
         <>
+
+            {/* added header section */}
             <Header></Header>
-            <div className='mb-5 py-5' style={{ backgroundColor: 'rgb(23 27 28 / 89%)' }}>
+
+            <div className='py-5' style={{ backgroundColor: 'rgb(23 27 28 / 89%)' }}>
                 <div className='container'>
                     <div className="py-5">
                         <h1 className='fw-bold text-white'>PURCHASE NOW!!</h1>
@@ -120,6 +127,9 @@ const Purchase = () => {
                     </div>
                 </div>
             </div>
+
+            {/* added footer section */}
+            <Footer></Footer>
         </>
     );
 };

@@ -6,11 +6,14 @@ import useAuth from '../../Hooks/useAuth';
 import register from '../../images/register.jpg';
 
 const Register = () => {
+
+    //destructuring data from use firebase
     const { registerUser, signInWithGoogle, isLoading, authError, user } = useAuth();
     const history = useHistory();
     const location = useLocation();
     const [logInData, setLogInData] = useState({});
 
+    //handle input users register form
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -18,6 +21,8 @@ const Register = () => {
         newLogInData[field] = value;
         setLogInData(newLogInData);
     }
+
+    //handle user submitted info
     const handleLogInSubmit = e => {
         if (logInData.password !== logInData.password2) {
             alert('Your password is miss match. please retry it.')
@@ -28,10 +33,13 @@ const Register = () => {
         e.target.reset();
 
     };
+
+    //handle user google signIn using google firebase
     const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

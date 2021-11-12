@@ -5,18 +5,22 @@ import ReactStars from 'react-rating-stars-component'
 import useAuth from '../../Hooks/useAuth';
 
 const Review = () => {
+
     const { register, handleSubmit, reset } = useForm();
     const [rating, setRating] = useState({});
     const { isLoading } = useAuth();
 
+    //handle users rating
     const handleRating = (rating) => {
         setRating(rating);
-    }
+    };
+
+    //handle user's review submission
     const onSubmit = data => {
         const date = new Date();
         const reviewData = { ...data, date, rating: rating };
         console.log(reviewData);
-        fetch('http://localhost:5000/review', {
+        fetch('https://immense-mesa-31667.herokuapp.com/review', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviewData)
@@ -28,6 +32,7 @@ const Review = () => {
         reset();
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

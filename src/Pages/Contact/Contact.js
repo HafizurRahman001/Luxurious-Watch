@@ -2,6 +2,7 @@ import './Contact.css';
 
 const Contact = () => {
 
+    //handle contact form
     const handleContact = e => {
         e.preventDefault();
 

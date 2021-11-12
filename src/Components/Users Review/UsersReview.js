@@ -5,15 +5,19 @@ import reviewLogo from '../../images/logo/review-logo.png'
 import review from '../../images/review.jpg';
 
 const UsersReview = () => {
+
     const [reviews, setReviews] = useState([]);
+
+    // loading all user review from database
     useEffect(() => {
-        fetch('http://localhost:5000/user-review')
+        fetch('https://immense-mesa-31667.herokuapp.com/user-review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
             })
     }, []);
 
+    // css styling object
     const cardShadow = {
         boxShadow: '1px 1px 3px gray'
     }

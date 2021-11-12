@@ -104,7 +104,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         setIsLoading(true);
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://immense-mesa-31667.herokuapp.com/users', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)
@@ -119,7 +119,7 @@ const useFirebase = () => {
     // make admin using Email
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://immense-mesa-31667.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data?.admin)
@@ -131,7 +131,7 @@ const useFirebase = () => {
     // call all products from database
     useEffect(() => {
         setIsLoading(true)
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-mesa-31667.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

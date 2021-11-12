@@ -23,7 +23,6 @@ textarea {
 }
 
 /* media query for mobile devices */
-
 @media only screen and (max-width: 688px) {
   .review_form_section {
     width: 100% !important;

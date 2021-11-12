@@ -3,10 +3,11 @@ import './SingleOrder.css';
 const SingleOrder = (props) => {
     const { setControl } = props;
 
+    // handle cancel order
     const handleCancelOrder = id => {
         const proceedDelete = window.confirm('Are you sure to cancel order?');
         if (proceedDelete) {
-            fetch(`http://localhost:5000/cancel-order/${id}`, {
+            fetch(`https://immense-mesa-31667.herokuapp.com/cancel-order/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

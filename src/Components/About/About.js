@@ -5,8 +5,8 @@ import aboutImg from '../../images/about img.png';
 
 const About = () => {
     return (
-
         <div>
+
             {/* add header section  */}
             <Header></Header>
 
@@ -40,7 +40,7 @@ const About = () => {
                             <p>Luxe Digital is brought to you by the senior leadership team of mOOnshot digital, a celebrated full-service digital marketing agency for lifestyle and luxury brands. We have been at the forefront of digital transformation for some of the most well-known luxury companies in the world and emerging, modern disruptors.</p>
 
                             <div className="text-muted pt-5">
-                                <p> <strong>Business stories</strong>are demystifying the (digital) forces shaping the future of the luxury industry.</p>
+                                <p> <strong>Business stories</strong> are demystifying the (digital) forces shaping the future of the luxury industry.</p>
                                 <p><strong>Lifestyle stories</strong> are inspiring elevated living, from little gems to precious, unique experiences.</p>
                             </div>
                         </div>

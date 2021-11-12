@@ -5,14 +5,16 @@ import useAuth from '../../Hooks/useAuth';
 import addProduct from '../../images/add-product.jpg';
 
 const AddNewProduct = () => {
-    const { isLoading, setProducts, products } = useAuth();
 
+    const { isLoading, setProducts, products } = useAuth();
     const { register, handleSubmit, reset } = useForm();
+
+    //handle add new product to database
     const onSubmit = data => {
         data.boxContent = 'Watch';
 
         //send product to database
-        fetch('http://localhost:5000/add-product', {
+        fetch('https://immense-mesa-31667.herokuapp.com/add-product', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -28,7 +30,7 @@ const AddNewProduct = () => {
 
     //recall products for delete product
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://immense-mesa-31667.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

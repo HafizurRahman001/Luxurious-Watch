@@ -4,15 +4,19 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
 
 const MakeAdmin = () => {
+
     const { register, handleSubmit, reset } = useForm();
     const { isLoading } = useAuth();
 
+    // css style object
     const adminEmailInput = {
         padding: '5px 3px',
         marginRight: '7px'
     }
+
+    // handle making admin
     const onSubmit = data => {
-        fetch('http://localhost:5000/admin', {
+        fetch('https://immense-mesa-31667.herokuapp.com/admin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -29,6 +33,7 @@ const MakeAdmin = () => {
         reset();
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

@@ -4,8 +4,11 @@ import useAuth from '../../Hooks/useAuth';
 import SingleProduct from '../Single Product/SingleProduct';
 
 const Products = () => {
+
+    //destructuring data
     const { products, isLoading } = useAuth();
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

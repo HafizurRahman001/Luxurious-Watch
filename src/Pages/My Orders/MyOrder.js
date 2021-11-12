@@ -3,18 +3,22 @@ import useAuth from '../../Hooks/useAuth';
 import SingleOrder from '../Single Order/SingleOrder';
 
 const MyOrder = () => {
+
+    //declaring and structure data
     const { user, isLoading } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
     const [control, setControl] = useState(false);
 
+    //loaded user's orders from database
     useEffect(() => {
-        fetch(`http://localhost:5000/my-order/${user?.email}`)
+        fetch(`https://immense-mesa-31667.herokuapp.com/my-order/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyOrders(data);
             })
     }, [control, user?.email]);
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

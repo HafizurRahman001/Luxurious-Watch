@@ -3,20 +3,23 @@ import useAuth from '../../Hooks/useAuth';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
+
+    // handle useState and destructuring data
     const [manageProducts, setManageProducts] = useState([]);
     const { isLoading } = useAuth();
 
-
+    // handle manage products
     useEffect(() => {
-        fetch('http://localhost:5000/manage-all-orders')
+        fetch('https://immense-mesa-31667.herokuapp.com/manage-all-orders')
             .then(res => res.json())
             .then(data => {
                 setManageProducts(data);
             })
     }, [manageProducts]);
 
+    //handle deleted product and shipped method
     const handleShipped = (id, method, path) => {
-        fetch(`http://localhost:5000/${path}/${id}`, {
+        fetch(`https://immense-mesa-31667.herokuapp.com/${path}/${id}`, {
             method: method,
         })
             .then(res => res.json())
@@ -30,6 +33,7 @@ const ManageAllOrders = () => {
             })
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

@@ -6,12 +6,14 @@ import useAuth from '../../Hooks/useAuth';
 import login from '../../images/login.png';
 
 const LogIn = () => {
+
     const [logInData, setLogInData] = useState({});
     const { loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const location = useLocation()
     const history = useHistory()
 
+    // handle input field onchange function
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -19,14 +21,19 @@ const LogIn = () => {
         newLogInData[field] = value;
         setLogInData(newLogInData);
     };
+
+    // handle submit user info
     const handleLogInSubmit = e => {
         e.preventDefault();
         loginUser(logInData.email, logInData.password, location, history);
     };
+
+    //handle user signIn with google
     const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">

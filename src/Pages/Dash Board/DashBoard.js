@@ -1,7 +1,5 @@
 import { AppBar, CssBaseline, Divider, Drawer, IconButton, List, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
-
 import React from 'react';
 import { Box } from '@mui/system';
 import { Route, Switch, useRouteMatch } from 'react-router';
@@ -33,6 +31,7 @@ const DashBoard = () => {
         fontWeight: 'bold'
     };
 
+    // waiting browser until data loaded successfully
     if (isLoading) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">
@@ -41,8 +40,7 @@ const DashBoard = () => {
         </div>
     };
 
-
-
+    // dashboard drawer section
     const drawer = (
         <div data-aos="fade-down">
             <Toolbar style={{ backgroundColor: '#000000' }}>
@@ -103,6 +101,8 @@ const DashBoard = () => {
 
 
     return (
+
+        //dash board display component section
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar
