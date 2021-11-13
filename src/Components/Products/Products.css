@@ -1,3 +1,4 @@
 .sliced-products {
-  background: #ece6e56b;
+  background-image: linear-gradient(to bottom, #ece6e56b, #ece6e56b);
+  padding-bottom: 320px;
 }

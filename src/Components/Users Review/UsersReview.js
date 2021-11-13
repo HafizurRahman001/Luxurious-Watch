@@ -25,12 +25,18 @@ const UsersReview = () => {
     return (
         <div className='pb-5'>
             <div className='container'>
-                <div className='py-5'>
-                    <div>
-                        <img style={{ width: '15%', height: '15%' }} src={reviewLogo} alt="" />
+                <div className="row">
+                    <div className="col-md-2 col-2"></div>
+                    <div className="col-md-8 col-8 review-section" data-aos="slide-up">
+                        <div style={{ backgroundImage: 'linear-gradient(to bottom,rgb(206 198 188 / 65%), transparent)', marginTop: '-298px', marginBottom: '60px', borderRadius: '30px' }} className='py-5'>
+                            <div>
+                                <img style={{ width: '40%', height: '15%', marginTop: '-5px' }} src={reviewLogo} alt="" />
+                            </div>
+                            <h1 className='fw-bold'>OUR CLIENT'S OPINIONS</h1>
+                            <p className='text-muted'>What our client think about our products?</p>
+                        </div>
                     </div>
-                    <h1 className='fw-bold'>OUR CLIENTS OPINIONS</h1>
-                    <p className='text-muted'>What our client think about our products?</p>
+                    <div className="col-md-2 col-2"></div>
                 </div>
                 <div>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
