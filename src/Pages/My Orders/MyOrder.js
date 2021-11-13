@@ -33,15 +33,10 @@ const MyOrder = () => {
                 <h2 className='fw-bold'>YOUR ORDER LIST</h2>
                 <p className='text-muted'>Order Quantity {myOrders?.length}</p>
             </div>
-            {isLoading && <div className="text-center my-5">
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>}
             <div>
-                <div className="row g-2" >
+                <div className="row g-2">
                     {
-                        myOrders.map(order => <SingleOrder
+                        myOrders?.map(order => <SingleOrder
                             order={order}
                             key={order?._id}
                             setControl={setControl}

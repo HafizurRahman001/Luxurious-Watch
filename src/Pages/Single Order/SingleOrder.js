@@ -18,7 +18,7 @@ const SingleOrder = (props) => {
     };
 
     return (
-        <div className="col-md-12">
+        <div className="col-md-12" data-aos="fade-left">
             <div className="row order-details text-start">
                 <div className="col-md-4 mt-0 ps-0">
                     <div className="order-img">
