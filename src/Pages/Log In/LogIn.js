@@ -74,7 +74,7 @@ const LogIn = () => {
                                 <input className='btn text-white' style={{ backgroundColor: 'crimson', padding: '5px 14px' }} type="submit" value="LogIn" />
                             </div>
                         </form>
-                        <div className='signin-with-google' onClick={handleGoogleSignIn} style={{ border: '1px solid #ddd', padding: '10px 7px 10px 0px', borderRadius: '30px', width: '40%', margin: 'auto', cursor: 'pointer' }}>
+                        <div className='signin-with-google' onClick={handleGoogleSignIn} style={{ border: '1px solid #ddd', padding: '10px 7px 10px 0px', borderRadius: '30px', width: '50%', margin: 'auto', cursor: 'pointer' }}>
                             <p className='mb-0 text-white'><i className="fab pe-3 fa-google"></i> SignIn With Google</p>
                         </div>
                     </div>
