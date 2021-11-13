@@ -16,4 +16,4 @@ This is actually about the luxurious WATCHES. You can find many products, can or
 - implementation of email form for making an user as admin
 - implementation of react `zoom in` and `slide left` animation
 
-## Admin email: `admin@admin.com` PassWord: `123456`
+## Admin Email: `admin@admin.com` Password: `123456`
