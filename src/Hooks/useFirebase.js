@@ -40,7 +40,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setIsLoading(false))
+            .finally(() => setIsLoading(false));
     };
 
 
@@ -57,7 +57,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setIsLoading(false))
+            .finally(() => setIsLoading(false));
     }
 
     // observe user state
@@ -90,7 +90,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message)
             })
-            .finally(() => setIsLoading(false))
+            .finally(() => setIsLoading(false));
     };
 
     //logOut method for signOut
@@ -99,6 +99,7 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setUser({});
+                setAuthError('');
             })
             .catch((error) => {
                 setAuthError(error.message)
