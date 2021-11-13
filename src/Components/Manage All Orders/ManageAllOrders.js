@@ -21,19 +21,34 @@ const ManageAllOrders = () => {
 
     //handle deleted product and shipped method
     const handleShipped = (id, method, path) => {
-        fetch(`https://immense-mesa-31667.herokuapp.com/${path}/${id}`, {
-            method: method,
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data?.modifiedCount > 0) {
-                    //display sweet alert
-                    swal("Product Successfully Shipped!", "Have a nice day!", "success");
-                }
-                if (data.deletedCount > 0) {
-                    alert('Order Successfully Deleted')
-                }
+
+        if (method === 'DELETE') {
+            const proceedDeleteOrder = window.confirm('Are you sure you want to delete?');
+            if (proceedDeleteOrder && (method === 'DELETE')) {
+                fetch(`https://immense-mesa-31667.herokuapp.com/${path}/${id}`, {
+                    method: method,
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            swal("Product Deleted Successfully!", "Done!", "success");
+                        }
+                    })
+            }
+        }
+        else {
+            fetch(`https://immense-mesa-31667.herokuapp.com/${path}/${id}`, {
+                method: method,
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data?.modifiedCount > 0) {
+                        //display sweet alert
+                        swal("Product Successfully Shipped!", "Have a nice day!", "success");
+                    }
+                })
+        }
+
     };
 
     // waiting browser until data loaded successfully

@@ -1,4 +1,5 @@
 import './SingleOrder.css';
+import swal from 'sweetalert';
 
 const SingleOrder = (props) => {
     const { setControl } = props;
@@ -11,6 +12,7 @@ const SingleOrder = (props) => {
             })
                 .then(res => res.json())
                 .then(data => {
+                    swal("Product Deleted Successfully!", "Done!", "success");
                     setControl(data?.acknowledged);
                     setControl(false);
                 })

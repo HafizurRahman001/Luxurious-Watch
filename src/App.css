@@ -11,3 +11,10 @@
 .swal-button:hover {
   background-color: tomato !important;
 }
+.swal-button--danger {
+  background-color: #e64942 !important;
+}
+.swal-button--cancel {
+  color: black;
+  background-color: #efefef !important;
+}

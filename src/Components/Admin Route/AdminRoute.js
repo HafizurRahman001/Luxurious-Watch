@@ -5,7 +5,6 @@ import useAuth from '../../Hooks/useAuth';
 const AdminRoute = ({ children, ...rest }) => {
 
     const { user, isLoading, admin } = useAuth();
-    console.log('admin', admin);
 
     // waiting browser until data loaded successfully
     if (isLoading || (!admin)) {

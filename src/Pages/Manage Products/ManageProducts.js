@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
+
 
 const ManageProducts = () => {
     const { products, setProducts, isLoading } = useAuth();
@@ -22,7 +24,9 @@ const ManageProducts = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data?.insertedId);
+                    if (data?.deletedCount > 0) {
+                        swal("Product Deleted Successfully!", "Done!", "success");
+                    }
                 })
         }
 
