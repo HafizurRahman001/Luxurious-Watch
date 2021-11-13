@@ -2,6 +2,8 @@ import React from 'react';
 import './PurchaseInfo.css';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
+
 
 const PurchaseInfo = ({ specificProduct }) => {
     const { user } = useAuth();
@@ -20,7 +22,8 @@ const PurchaseInfo = ({ specificProduct }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Your Order placed Successfully')
+                    //display sweet alert
+                    swal("Good job!", "You clicked the button!", "success");
                 }
             })
         reset();
