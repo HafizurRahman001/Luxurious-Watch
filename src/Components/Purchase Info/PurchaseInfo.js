@@ -23,7 +23,7 @@ const PurchaseInfo = ({ specificProduct }) => {
             .then(data => {
                 if (data.insertedId) {
                     //display sweet alert
-                    swal("Place Order successful!", "Congratulation for purchase!", "OK");
+                    swal("Place Order successful!", "Congratulation for purchase!", "success");
                 }
             })
         reset();

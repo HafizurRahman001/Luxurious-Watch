@@ -5,15 +5,18 @@ import useAuth from '../../Hooks/useAuth';
 const AdminRoute = ({ children, ...rest }) => {
 
     const { user, isLoading, admin } = useAuth();
+    console.log('admin', admin);
 
     // waiting browser until data loaded successfully
-    if (isLoading) {
+    if (isLoading || (!admin)) {
         return <div className="text-center my-5">
             <div className="spinner-border" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
         </div>
     };
+
+
     return (
         <Route
             {...rest}

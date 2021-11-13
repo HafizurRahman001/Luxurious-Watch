@@ -125,7 +125,10 @@ const useFirebase = () => {
             .then(data => {
                 setAdmin(data?.admin)
             })
-        setIsLoading(false);
+            .catch(error => {
+                setAuthError(error.message);
+            })
+            .finally(() => { setIsLoading(false) })
     }, [user?.email])
 
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import './ManageAllOrders.css';
+import swal from 'sweetalert';
+
 
 const ManageAllOrders = () => {
 
@@ -25,7 +27,8 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data?.modifiedCount > 0) {
-                    alert('Product Successfully Shipped.')
+                    //display sweet alert
+                    swal("Product Successfully Shipped!", "Have a nice day!", "success");
                 }
                 if (data.deletedCount > 0) {
                     alert('Order Successfully Deleted')
