@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAd8EfiIvyOxqBU6FXjrfFDISpn70N5Awg",
-    authDomain: "luxurious-watch.firebaseapp.com",
-    projectId: "luxurious-watch",
-    storageBucket: "luxurious-watch.appspot.com",
-    messagingSenderId: "715129512036",
-    appId: "1:715129512036:web:ac5a6e07f25ea5828cbf71"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGS_ENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 export default firebaseConfig;

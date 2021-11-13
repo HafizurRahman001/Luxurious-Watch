@@ -15,7 +15,7 @@ const Banner = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={banner1} className="d-block w-100" alt="..." />
+                        <img data-aos='zoom-out' src={banner1} className="d-block w-100" alt="..." />
                         <div style={{ background: 'rgb(49 48 48 / 42%)' }} className="carousel-caption d-none d-md-block" data-aos="fade-left">
                             <h2 style={{ textShadow: '1px 2px 3px black', color: 'yellow', fontWeight: 'bold' }}>WELCOME TO LUXURIOUS WATCH STORE</h2>
                             <p style={{ textShadow: '1px 2px 3px black', color: 'aqua', fontSize: '20px' }}>We are offering you various gent's fashionable watch</p>
