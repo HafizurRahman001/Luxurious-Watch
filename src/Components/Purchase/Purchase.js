@@ -9,7 +9,6 @@ const Purchase = () => {
 
     const { productId } = useParams();
     const [specificProduct, setSpecificProduct] = useState({});
-    console.log(specificProduct);
 
     // load specific data using user's email
     useEffect(() => {
