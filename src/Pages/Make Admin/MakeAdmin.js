@@ -2,6 +2,7 @@ import React from 'react';
 import './MakeAdmin.css';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
 
 const MakeAdmin = () => {
 
@@ -24,10 +25,12 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Admin Successfully Made')
+                    //display sweet alert
+                    swal("Admin Successfully Made!", "Well Done!", "success");
                 }
                 if (data.modifiedCount === 0) {
-                    alert('Already is a Admin')
+                    //display sweet alert
+                    swal("Already is a Admin!", "Try another user!", "success");
                 };
             })
         reset();

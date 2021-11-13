@@ -4,14 +4,15 @@ import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import login from '../../images/login.png';
+import swal from 'sweetalert';
 
 const LogIn = () => {
 
     const [logInData, setLogInData] = useState({});
     const { loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
-    const location = useLocation()
-    const history = useHistory()
+    const location = useLocation();
+    const history = useHistory();
 
     // handle input field onchange function
     const handleOnChange = e => {
@@ -26,12 +27,18 @@ const LogIn = () => {
     const handleLogInSubmit = e => {
         e.preventDefault();
         loginUser(logInData.email, logInData.password, location, history);
+        e.target.reset();
     };
 
     //handle user signIn with google
-    const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history)
+    const handleGoogleSignIn = (e) => {
+        signInWithGoogle(location, history);
     };
+
+    //handle error
+    if (authError) {
+        swal(authError, "Opps!", "success");
+    }
 
     // waiting browser until data loaded successfully
     if (isLoading) {
@@ -62,7 +69,7 @@ const LogIn = () => {
                             <p style={{ marginTop: '-10px' }} className='text-start mb-1'>
                                 <Link style={{ textDecoration: 'none', color: 'yellow' }} to='/register'>New User? Please Register</Link>
                             </p>
-                            {authError && <p style={{ color: 'tomato', textAlign: 'left' }} >{authError}</p>}
+
                             <div className='text-start'>
                                 <input className='btn text-white' style={{ backgroundColor: 'crimson', padding: '5px 14px' }} type="submit" value="LogIn" />
                             </div>
@@ -70,11 +77,6 @@ const LogIn = () => {
                         <div className='signin-with-google' onClick={handleGoogleSignIn} style={{ border: '1px solid #ddd', padding: '10px 7px 10px 0px', borderRadius: '30px', width: '40%', margin: 'auto', cursor: 'pointer' }}>
                             <p className='mb-0 text-white'><i className="fab pe-3 fa-google"></i> SignIn With Google</p>
                         </div>
-                        {/* {isLoading && <div className="text-center my-5">
-                            <div className="spinner-border" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </div>
-                        </div>} */}
                     </div>
                     <div className="col-md-6">
                         <img style={{ width: '100%', padding: '10px 0px 10px 0px' }} className='' src={login} alt="" />

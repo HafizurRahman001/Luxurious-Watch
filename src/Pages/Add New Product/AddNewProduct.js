@@ -3,6 +3,8 @@ import './AddNewProduct.css';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
 import addProduct from '../../images/add-product.jpg';
+import swal from 'sweetalert';
+
 
 const AddNewProduct = () => {
 
@@ -22,7 +24,8 @@ const AddNewProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if (data?.insertedId) {
-                    alert('New Product Added Successfully.');
+                    //display sweet alert
+                    swal("New Product Added Successfully!", "Check it out!", "success");
                 }
             })
         reset();

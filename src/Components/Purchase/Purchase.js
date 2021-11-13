@@ -51,7 +51,7 @@ const Purchase = () => {
                                                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                     <div className="accordion-body">
                                                         <p style={{ textAlign: 'justify' }} className="card-text product-description">{specificProduct?.desc?.slice(0, 300)}</p>
-                                                        <h5 className='text-start text-muted'>Price: ${specificProduct?.price}</h5>
+                                                        <h5 className='text-start text-muted product-description-price'>Price: ${specificProduct?.price}</h5>
                                                     </div>
                                                 </div>
                                             </div>

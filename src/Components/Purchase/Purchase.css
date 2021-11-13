@@ -12,3 +12,8 @@
   font-size: 19px;
   font-weight: 500;
 }
+.product-description-price {
+  font-family: "Slabo 27px", serif !important;
+  font-size: 25px;
+  font-weight: bold;
+}

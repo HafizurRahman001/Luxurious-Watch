@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import register from '../../images/register.jpg';
+import swal from 'sweetalert';
 
 const Register = () => {
 
@@ -24,12 +25,14 @@ const Register = () => {
 
     //handle user submitted info
     const handleLogInSubmit = e => {
+        e.preventDefault();
         if (logInData.password !== logInData.password2) {
-            alert('Your password is miss match. please retry it.')
+            //display sweet alert
+            swal("Your Password is Miss Match!", "Please Try Again!", "success");
+            e.target.reset();
             return;
         }
         registerUser(logInData.email, logInData.password, logInData.name, history)
-        e.preventDefault();
         e.target.reset();
 
     };
@@ -37,6 +40,10 @@ const Register = () => {
     //handle user google signIn using google firebase
     const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
+    };
+
+    if (authError) {
+        swal(authError, "Opps!", "success")
     };
 
     // waiting browser until data loaded successfully
@@ -76,7 +83,6 @@ const Register = () => {
                             <p style={{ marginTop: '-10px' }} className='text-start mb-1'>
                                 <Link style={{ textDecoration: 'none', color: 'yellow' }} to='/login'>Already Have An Accoutn?</Link>
                             </p>
-                            {authError && <p style={{ color: 'tomato', textAlign: 'left' }} >{authError}</p>}
                             <div className='text-start'>
                                 <input className='btn text-white' style={{ backgroundColor: 'crimson' }} type="submit" value="Register" />
                             </div>

@@ -40,6 +40,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
+            .finally(() => setIsLoading(false))
     };
 
 
@@ -56,6 +57,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }
 
     // observe user state
@@ -94,11 +96,14 @@ const useFirebase = () => {
     //logOut method for signOut
     const logOut = () => {
         setIsLoading(true);
-        signOut(auth).then(() => {
-            setUser({});
-        }).catch((error) => {
-            setAuthError(error.message)
-        })
+        signOut(auth)
+            .then(() => {
+                setUser({});
+            })
+            .catch((error) => {
+                setAuthError(error.message)
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // common method using for store user info in database
