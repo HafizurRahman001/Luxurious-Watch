@@ -3,6 +3,7 @@ import './Review.css';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component'
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
 
 const Review = () => {
 
@@ -30,6 +31,13 @@ const Review = () => {
                 console.log(data);
             })
         reset();
+
+        swal({
+            title: "Thanks for your review!",
+            text: "Your opinion is very important to us!",
+            icon: "success",
+            button: "Ok!",
+        });
     };
 
     // waiting browser until data loaded successfully

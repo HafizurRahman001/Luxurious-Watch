@@ -12,6 +12,7 @@ import AddNewProduct from '../Add New Product/AddNewProduct';
 import useAuth from '../../Hooks/useAuth';
 import ManagementProducts from '../../Components/Management Products/ManagementProducts';
 import dashBoardLogo from '../../images/dashboard-logo2.jpg';
+import AdminRoute from '../../Components/Admin Route/AdminRoute';
 
 const drawerWidth = 240;
 
@@ -183,18 +184,18 @@ const DashBoard = () => {
                         <Route path={`${path}/review`}>
                             <Review />
                         </Route>
-                        <Route path={`${path}/manage-all-orders`}>
+                        <AdminRoute path={`${path}/manage-all-orders`}>
                             <ManageAllOrders />
-                        </Route>
-                        <Route path={`${path}/add-new-product`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/add-new-product`}>
                             <AddNewProduct />
-                        </Route>
-                        <Route path={`${path}/manage-products`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manage-products`}>
                             <ManagementProducts />
-                        </Route>
-                        <Route path={`${path}/make-admin`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/make-admin`}>
                             <MakeAdmin />
-                        </Route>
+                        </AdminRoute>
                     </Switch>
                 </Box>
             </Box>

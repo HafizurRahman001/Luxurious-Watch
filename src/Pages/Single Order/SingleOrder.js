@@ -3,11 +3,10 @@ import './SingleOrder.css';
 const SingleOrder = (props) => {
     const { setControl } = props;
 
-    // handle cancel order
     const handleCancelOrder = id => {
         const proceedDelete = window.confirm('Are you sure to cancel order?');
         if (proceedDelete) {
-            fetch(`https://immense-mesa-31667.herokuapp.com/cancel-order/${id}`, {
+            fetch(`http://localhost:5000/cancel-order/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -19,7 +18,7 @@ const SingleOrder = (props) => {
     };
 
     return (
-        <div className="col-md-12" data-aos="fade-left">
+        <div className="col-md-12">
             <div className="row order-details text-start">
                 <div className="col-md-4 mt-0 ps-0">
                     <div className="order-img">
@@ -59,7 +58,7 @@ const SingleOrder = (props) => {
                                 <div style={{ color: 'rgb(221 221 221 / 74%)' }} className="col-md-7 col-7 ps-5 product-highlights">
                                     <p>{props?.order?.localDate}</p>
                                     <p>{props?.order?.specificProduct?.price}</p>
-                                    <p>{props?.order?.specificProduct?.productBrand}</p>
+                                    <p>{props?.order?.specificProduct?.close}</p>
                                     <p className={props?.order?.status === 'Shipped' && 'status'}>{props?.order?.status}</p>
                                 </div>
                             </div>
