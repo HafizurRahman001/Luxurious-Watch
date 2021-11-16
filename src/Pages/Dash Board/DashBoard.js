@@ -13,6 +13,7 @@ import useAuth from '../../Hooks/useAuth';
 import ManagementProducts from '../../Components/Management Products/ManagementProducts';
 import dashBoardLogo from '../../images/dashboard-logo2.jpg';
 import AdminRoute from '../../Components/Admin Route/AdminRoute';
+import Payment from '../../Components/Payment/Payment';
 
 const drawerWidth = 240;
 
@@ -176,7 +177,7 @@ const DashBoard = () => {
                 <Box>
                     <Switch>
                         <Route exact path={path}>
-                            <h3>PAYMENT SYSTEM COMING SOON.</h3>
+                            <Payment></Payment>
                         </Route>
                         <Route path={`${path}/my-order`}>
                             <MyOrder />

@@ -36,6 +36,9 @@ const useFirebase = () => {
                     setAuthError(error)
                 });
                 history.replace('/')
+
+                //instant logout for prevent automatic login after register
+                logOut();
             })
             .catch((error) => {
                 setAuthError(error.message);
