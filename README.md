@@ -2,7 +2,7 @@
 
 ## livesite link: [https://luxurious-watch.web.app/](https://luxurious-watch.web.app/)
 
-## backend server link: [click here](https://github.com/programming-hero-web-course-4/niche-website-server-side-HafizurRahman001)
+## backend server link: [click here](https://github.com/HafizurRahman001/Luxurious-Watch-Backend)
 
 ## `Short description about the site`
 
