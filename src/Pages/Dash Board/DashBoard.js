@@ -42,7 +42,7 @@ const DashBoard = () => {
         </div>
     };
 
-    // dashboard drawer Section
+    // dashboard Drawer Section
     const drawer = (
         <div data-aos="fade-down">
             <Toolbar style={{ backgroundColor: '#000000' }}>
