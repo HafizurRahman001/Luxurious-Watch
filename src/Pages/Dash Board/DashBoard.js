@@ -42,7 +42,7 @@ const DashBoard = () => {
         </div>
     };
 
-    // dashboard drawer section
+    // dashboard drawer Section
     const drawer = (
         <div data-aos="fade-down">
             <Toolbar style={{ backgroundColor: '#000000' }}>
@@ -177,6 +177,9 @@ const DashBoard = () => {
                 <Box>
                     <Switch>
                         <Route exact path={path}>
+                            <Payment></Payment>
+                        </Route>
+                        <Route path={`${path}/dash-board/payment/:appointment`}>
                             <Payment></Payment>
                         </Route>
                         <Route path={`${path}/my-order`}>

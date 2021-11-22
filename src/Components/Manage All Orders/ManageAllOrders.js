@@ -83,7 +83,12 @@ const ManageAllOrders = () => {
                         <td>{manageProduct?.specificProduct?.title}</td>
                         <td className={manageProduct?.status === 'Shipped' ? 'status' : 'text-white'}>{manageProduct?.status}</td>
                         <td>
-                            <button className='btn btn-info px-2 py-1' onClick={() => handleShipped(manageProduct?._id, 'PUT', 'shipped')}>Shipped</button>{' '}
+
+
+                            <button className='btn btn-info px-2 py-1' onClick={() => handleShipped(manageProduct?._id, 'PUT', 'shipped')}>Shipped</button>
+
+
+                            {' '}
                             <button className='btn btn-danger px-2 py-1' onClick={() => handleShipped(manageProduct?._id, 'DELETE', 'delete-product')}>Delete</button>
                         </td>
                     </tr>

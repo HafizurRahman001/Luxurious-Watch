@@ -1,5 +1,6 @@
 import './SingleOrder.css';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 const SingleOrder = (props) => {
     const { setControl } = props;
@@ -60,7 +61,7 @@ const SingleOrder = (props) => {
                                 <div style={{ color: 'rgb(221 221 221 / 74%)' }} className="col-md-7 col-7 ps-5 product-highlights">
                                     <p>{props?.order?.localDate}</p>
                                     <p>{props?.order?.specificProduct?.price}</p>
-                                    <p>{props?.order?.specificProduct?.close}</p>
+                                    <p>{props?.order?.specificProduct?.productBrand}</p>
                                     <p className={props?.order?.status === 'Shipped' && 'status'}>{props?.order?.status}</p>
                                 </div>
                             </div>
@@ -71,7 +72,16 @@ const SingleOrder = (props) => {
                                 <button onClick={() => handleCancelOrder(props?.order?._id)}
                                     style={{ backgroundColor: '#2D2D37', color: 'white' }} className="btn cancel-order-btn">Cancel Order
                                     <i style={{ color: 'tomato' }} className="fas ps-2 fa-times"></i>
+                                </button> {' '}
+
+                                <button
+                                    style={{ backgroundColor: '#2D2D37', color: 'white' }} className="btn cancel-order-btn">{props?.order?.specificProduct?.payment ? 'Paid' :
+                                        <Link to={`/dash-board/payment/${props?.order?._id}`}
+                                            style={{ textDecoration: 'none', color: 'white' }}>Pay</Link>
+                                    }
+                                    <i style={{ color: 'tomato' }} className="fas ps-2 fa-times"></i>
                                 </button>
+
                             </div>
                         </div>
                     </div>
