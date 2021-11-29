@@ -1,6 +1,6 @@
 # Luxurious Watch
 
-## livesite link: [https://luxurious-watch.web.app/](https://luxurious-watch.web.app/)
+## livesite link: [https://luxurious-watch.firebaseapp.com/](https://luxurious-watch.firebaseapp.com/)
 
 ## backend server link: [click here](https://github.com/HafizurRahman001/Luxurious-Watch-Backend)
 
